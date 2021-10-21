@@ -67,7 +67,7 @@ var Game = class {
 		this.ui;
 
 		// settings
-		this.version = '1.3.2';
+		this.version = '1.3.2-HAX!';
 		this.base_cols = 14;
 		this.base_rows = 11;
 		this.max_cols = 35;
