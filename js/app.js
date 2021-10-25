@@ -61,29 +61,46 @@ console.log
 
 var ui = window.ui;
 window.ui = null;
-
+var base_cols = 14;
+var base_rows = 11;
+var max_cols = 35;
+var max_rows = 32;
+var debug = false;
+var offline_tick = true;
+var base_loop_wait = 1000; //chronometers
+var base_power_multiplier = 1;
+var base_heat_multiplier = 4;
+var base_manual_heat_reduce = 1;
+var upgrade_max_level = 32;
+var base_max_heat = 1000;
+var base_max_power = 100;
+var base_money = 10;
+var save_interval = 60000;
+//
+var exotic_particles = 0
+var current_exotic_particles = 0;
 var Game = class {
 	constructor() {
 		this.ui;
 
 		// settings
-		this.version = '1.3.2';
-		this.base_cols = 14;
-		this.base_rows = 11;
-		this.max_cols = 35;
-		this.max_rows = 32;
-		this.debug = false;
+		this.version = "1.3.2 / Weigurde's fork ";
+		this.base_cols = base_cols;
+		this.base_rows = base_rows;
+		this.max_cols = max_cols;
+		this.max_rows = max_rows;
+		this.debug = debug;
 		this.save_debug = false;
-		this.offline_tick =true;
-		this.base_loop_wait = 1000;
-		this.base_power_multiplier = 1;
-		this.base_heat_multiplier = 4;
-		this.base_manual_heat_reduce = 1;
-		this.upgrade_max_level = 32;
-		this.base_max_heat = 1000;
-		this.base_max_power = 100;
-		this.base_money = 10;
-		this.save_interval = 60000;
+		this.offline_tick = offline_tick;
+		this.base_loop_wait = base_loop_wait;
+		this.base_power_multiplier = base_power_multiplier;
+		this.base_heat_multiplier = base_heat_multiplier;
+		this.base_manual_heat_reduce = base_manual_heat_reduce;
+		this.upgrade_max_level = upgrade_max_level;
+		this.base_max_heat = base_max_heat;
+		this.base_max_power = base_max_power;
+		this.base_money = base_money;
+		this.save_interval = save_interval;
 
 		// Current
 		this.current_heat;
